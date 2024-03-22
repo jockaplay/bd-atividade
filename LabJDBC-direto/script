@@ -1,0 +1,1 @@
+SELECT DISTINCT c.nome as client, f.nome as movie FROM cliente c JOIN locar l ON c.login = l.login_clientefk JOIN unidade u ON u.codigo = l.codigo_unidadefk JOIN filme f ON f.codigo = u.codigo_filmefk
