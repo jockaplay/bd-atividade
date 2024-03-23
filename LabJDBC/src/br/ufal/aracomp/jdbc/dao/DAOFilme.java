@@ -44,7 +44,7 @@ public class DAOFilme implements IDAOFilme {
 	public void alterar(int CodigoAntigo, Filme dadosNovos) {
 		Filme cTeste = this.consultar(dadosNovos.getCodigo());
 		if(cTeste == null) {
-			String sql = "update Filme set nome = '"+dadosNovos.getNome()+"', set codigo = '"+dadosNovos.getCodigo()+"' where codigo = '"+CodigoAntigo+"'";
+			String sql = "UPDATE filme SET codigo = " + dadosNovos.getCodigo() + ", nome = '" + dadosNovos.getNome() + "' where codigo = " + CodigoAntigo;
 			try {
 			dataSource.executarQueryGeral(sql);
 			}catch(Exception e) {
